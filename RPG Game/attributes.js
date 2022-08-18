@@ -1,5 +1,7 @@
 const player = new Object();
 
+player.level = 20;
+
 player.vigor = 0;
 player.strength = 0;
 player.dexterity = 0;
@@ -7,194 +9,217 @@ player.intelligence = 0;
 player.faith = 0;
 player.arcane = 0;
 
-window.onload =function() {
+let count = player.level;
+count = Number(count)
+
+window.onload = function() {
+
+
+
+function checkIfZero() {
+    if (count === 0) {
+        console.log('it is zero')
+        prompt("hellooo cli comsthing")
+    }
+}
 
 let rebirthBtn = document.getElementById("rebirth")
 rebirthBtn.addEventListener("click", event => {
     rebirthfunc();
 })
 
-function rebirthfunc ( level ) {
-    let count = level;
+function rebirthfunc() {
     
-    while (count > 0) {
+    console.log(`is count number T or F ${typeof count}`)
+    console.log(`count is ${count}`)
+    
+    // while (count > 0) {
 
-        // window.onload = function() {
+        
+    // window.onload = function() {
 
 //Vigor
 
-let decArrowVig = document.getElementById("decBtnVigor");
-decArrowVig.addEventListener( "click", event => {
-    decreasingVigorStat();
-});
+        let decArrowVig = document.getElementById("decBtnVigor");
+        decArrowVig.addEventListener( "click", event => {
+            decreasingVigorStat();
+            console.log(`is this working`)
+        });
 
-let incArrowVig = document.getElementById("incBtnVigor");
-incArrowVig.addEventListener('click', event => {
-    increasingVigorStat();
-})
+        let incArrowVig = document.getElementById("incBtnVigor");
+        incArrowVig.addEventListener('click', event => {
+            increasingVigorStat();
+            console.log(`is this working`)
 
-let vigorValue = document.getElementById("spanVigor");
-vigorValue.innerHTML = player.vigor;
+            checkIfZero()
+        })
 
-function decreasingVigorStat() {
-    player.vigor -= 1;
-    vigorValue.innerHTML = player.vigor;
-    count --;
-} 
+        let vigorValue = document.getElementById("spanVigor");
+        vigorValue.innerHTML = player.vigor;
 
-function increasingVigorStat() {
-    player.vigor += 1;
-    vigorValue.innerHTML = player.vigor;
-    count ++;
-}
+        function decreasingVigorStat() {
+            player.vigor -= 1;
+            vigorValue.innerHTML = player.vigor;
+            count++;
+            console.log(`is this working count is ${count}`)
+        } 
 
-//Strength
+        function increasingVigorStat() {
+            player.vigor += 1;
+            vigorValue.innerHTML = player.vigor;
+            count--;
+            console.log(`is this working count is ${(count)}`)
+        }
 
-let decArrowStr = document.getElementById("decBtnStr");
-decArrowStr.addEventListener( "click", event => {
-    decreasingStrengthStat();
+        //Strength
 
-});
+        let decArrowStr = document.getElementById("decBtnStr");
+        decArrowStr.addEventListener( "click", event => {
+            decreasingStrengthStat();
 
-let incArrowStr = document.getElementById("incBtnStr");
-incArrowStr.addEventListener('click', event => {
-    increasingStrengthStat();
-})
+        });
 
-let strengthValue = document.getElementById("spanStr");
-strengthValue.innerHTML = player.strength;
+        let incArrowStr = document.getElementById("incBtnStr");
+        incArrowStr.addEventListener('click', event => {
+            increasingStrengthStat();
+        })
 
-function decreasingStrengthStat() {
-    player.strength -= 1;
-    strengthValue.innerHTML = player.strength;
-    count --;
-} 
+        let strengthValue = document.getElementById("spanStr");
+        strengthValue.innerHTML = player.strength;
 
-function increasingStrengthStat() {
-    player.strength += 1;
-    strengthValue.innerHTML = player.strength;
-    count ++;
-}
+        function decreasingStrengthStat() {
+            player.strength -= 1;
+            strengthValue.innerHTML = player.strength;
+            count --;
+        } 
 
-//Dexterity
+        function increasingStrengthStat() {
+            player.strength += 1;
+            strengthValue.innerHTML = player.strength;
+            count ++;
+        }
 
-let decArrowDex = document.getElementById("decBtnDex");
-decArrowDex.addEventListener( "click", event => {
-    decreasingDexStat();
-});
+        //Dexterity
 
-let incArrowDex = document.getElementById("incBtnDex");
-incArrowDex.addEventListener('click', event => {
-    increasingDexStat();
-})
+        let decArrowDex = document.getElementById("decBtnDex");
+        decArrowDex.addEventListener( "click", event => {
+            decreasingDexStat();
+        });
 
-let dexValue = document.getElementById("spanDex");
-dexValue.innerHTML = player.dexterity;
+        let incArrowDex = document.getElementById("incBtnDex");
+        incArrowDex.addEventListener('click', event => {
+            increasingDexStat();
+        })
 
-function decreasingDexStat() {
-    player.dexterity -= 1;
-    dexValue.innerHTML = player.dexterity;
-    count --;
-} 
+        let dexValue = document.getElementById("spanDex");
+        dexValue.innerHTML = player.dexterity;
 
-function increasingDexStat() {
-    player.dexterity += 1;
-    dexValue.innerHTML = player.dexterity;
-    count ++;
-}
+        function decreasingDexStat() {
+            player.dexterity -= 1;
+            dexValue.innerHTML = player.dexterity;
+            count --;
+        } 
 
-//Intelligence
+        function increasingDexStat() {
+            player.dexterity += 1;
+            dexValue.innerHTML = player.dexterity;
+            count ++;
+        }
 
-let decArrowInt = document.getElementById("decBtnInt");
-decArrowInt.addEventListener( "click", event => {
-    decreasingIntStat();
-});
+        //Intelligence
 
-let incArrowInt = document.getElementById("incBtnInt");
-incArrowInt.addEventListener('click', event => {
-    increasingIntStat();
-})
+        let decArrowInt = document.getElementById("decBtnInt");
+        decArrowInt.addEventListener( "click", event => {
+            decreasingIntStat();
+        });
 
-let intValue = document.getElementById("spanInt");
-intValue.innerHTML = player.intelligence;
+        let incArrowInt = document.getElementById("incBtnInt");
+        incArrowInt.addEventListener('click', event => {
+            increasingIntStat();
+        })
 
-function decreasingIntStat() {
-    player.intelligence -= 1;
-    intValue.innerHTML = player.intelligence;
-    count --;
-} 
+        let intValue = document.getElementById("spanInt");
+        intValue.innerHTML = player.intelligence;
 
-function increasingIntStat() {
-    player.intelligence += 1;
-    intValue.innerHTML = player.intelligence;
-    count ++;
-}
+        function decreasingIntStat() {
+            player.intelligence -= 1;
+            intValue.innerHTML = player.intelligence;
+            count --;
+        } 
 
-//Faith
+        function increasingIntStat() {
+            player.intelligence += 1;
+            intValue.innerHTML = player.intelligence;
+            count ++;
+        }
 
-let decArrowFai = document.getElementById("decBtnFai");
-decArrowFai.addEventListener( "click", event => {
-    decreasingFaiStat();
-});
+        //Faith
 
-let incArrowFai = document.getElementById("incBtnFai");
-incArrowFai.addEventListener('click', event => {
-    increasingFaiStat();
-})
+        let decArrowFai = document.getElementById("decBtnFai");
+        decArrowFai.addEventListener( "click", event => {
+            decreasingFaiStat();
+        });
 
-let faiValue = document.getElementById("spanFai");
-faiValue.innerHTML = player.faith;
+        let incArrowFai = document.getElementById("incBtnFai");
+        incArrowFai.addEventListener('click', event => {
+            increasingFaiStat();
+        })
 
-function decreasingFaiStat() {
-    player.intelligence -= 1;
-    faiValue.innerHTML = player.faith;
-    count --;
-} 
+        let faiValue = document.getElementById("spanFai");
+        faiValue.innerHTML = player.faith;
 
-function increasingFaiStat() {
-    player.faith += 1;
-    faiValue.innerHTML = player.faith;
-    count ++;
-}
+        function decreasingFaiStat() {
+            player.intelligence -= 1;
+            faiValue.innerHTML = player.faith;
+            count --;
+        } 
 
-//Arcane
+        function increasingFaiStat() {
+            player.faith += 1;
+            faiValue.innerHTML = player.faith;
+            count ++;
+        }
 
-let decArrowArc = document.getElementById("decBtnArc");
-decArrowArc.addEventListener( "click", event => {
-    decreasingArcStat();
-});
+        //Arcane
 
-let incArrowArc = document.getElementById("incBtnArc");
-incArrowArc.addEventListener('click', event => {
-    increasingArcStat();
-})
+        let decArrowArc = document.getElementById("decBtnArc");
+        decArrowArc.addEventListener( "click", event => {
+            decreasingArcStat();
+        });
 
-let arcValue = document.getElementById("spanArc");
-arcValue.innerHTML = player.arcane;
+        let incArrowArc = document.getElementById("incBtnArc");
+        incArrowArc.addEventListener('click', event => {
+            increasingArcStat();
+        })
 
-function decreasingArcStat() {
-    player.arcane -= 1;
-    arcValue.innerHTML = player.arcane;
-    count --;
-} 
+        let arcValue = document.getElementById("spanArc");
+        arcValue.innerHTML = player.arcane;
 
-function increasingArcStat() {
-    player.arcane += 1;
-    arcValue.innerHTML = player.arcane;
-    count ++;
-}
+        function decreasingArcStat() {
+            player.arcane -= 1;
+            arcValue.innerHTML = player.arcane;
+            count --;
+        } 
 
-}
+        function increasingArcStat() {
+            player.arcane += 1;
+            arcValue.innerHTML = player.arcane;
+            count ++;
+        }
+        
+        }
 
-}
 
-function submitfunc() {
-    console.log("SubmitFunc")
-}
+        function submitfunc() {
+            console.log("SubmitFunc")
+        }
+        
+        let submitBtn = document.getElementById("submit")
+        submitBtn.addEventListener("click", event => {
+            submitfunc()
+        })        
+      
 
-let submitBtn = document.getElementById("submit")
-submitBtn.addEventListener("click", event => {
-    submitfunc()
-})
+        }
 
-}
+
