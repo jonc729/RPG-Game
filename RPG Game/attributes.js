@@ -7,25 +7,30 @@ player.intelligence = 0;
 player.faith = 0;
 player.arcane = 0;
 
-function rebirth ( level ) {
+window.onload =function() {
+
+let rebirthBtn = document.getElementById("rebirth")
+rebirthBtn.addEventListener("click", event => {
+    rebirthfunc();
+})
+
+function rebirthfunc ( level ) {
     let count = level;
     
     while (count > 0) {
 
-        window.onload = function() {
+        // window.onload = function() {
 
 //Vigor
 
 let decArrowVig = document.getElementById("decBtnVigor");
 decArrowVig.addEventListener( "click", event => {
     decreasingVigorStat();
-    count --;
 });
 
 let incArrowVig = document.getElementById("incBtnVigor");
 incArrowVig.addEventListener('click', event => {
     increasingVigorStat();
-    count ++;
 })
 
 let vigorValue = document.getElementById("spanVigor");
@@ -34,11 +39,13 @@ vigorValue.innerHTML = player.vigor;
 function decreasingVigorStat() {
     player.vigor -= 1;
     vigorValue.innerHTML = player.vigor;
+    count --;
 } 
 
 function increasingVigorStat() {
     player.vigor += 1;
     vigorValue.innerHTML = player.vigor;
+    count ++;
 }
 
 //Strength
@@ -46,6 +53,7 @@ function increasingVigorStat() {
 let decArrowStr = document.getElementById("decBtnStr");
 decArrowStr.addEventListener( "click", event => {
     decreasingStrengthStat();
+
 });
 
 let incArrowStr = document.getElementById("incBtnStr");
@@ -59,11 +67,13 @@ strengthValue.innerHTML = player.strength;
 function decreasingStrengthStat() {
     player.strength -= 1;
     strengthValue.innerHTML = player.strength;
+    count --;
 } 
 
 function increasingStrengthStat() {
     player.strength += 1;
     strengthValue.innerHTML = player.strength;
+    count ++;
 }
 
 //Dexterity
@@ -84,11 +94,13 @@ dexValue.innerHTML = player.dexterity;
 function decreasingDexStat() {
     player.dexterity -= 1;
     dexValue.innerHTML = player.dexterity;
+    count --;
 } 
 
 function increasingDexStat() {
     player.dexterity += 1;
     dexValue.innerHTML = player.dexterity;
+    count ++;
 }
 
 //Intelligence
@@ -109,11 +121,13 @@ intValue.innerHTML = player.intelligence;
 function decreasingIntStat() {
     player.intelligence -= 1;
     intValue.innerHTML = player.intelligence;
+    count --;
 } 
 
 function increasingIntStat() {
     player.intelligence += 1;
     intValue.innerHTML = player.intelligence;
+    count ++;
 }
 
 //Faith
@@ -134,11 +148,13 @@ faiValue.innerHTML = player.faith;
 function decreasingFaiStat() {
     player.intelligence -= 1;
     faiValue.innerHTML = player.faith;
+    count --;
 } 
 
 function increasingFaiStat() {
     player.faith += 1;
     faiValue.innerHTML = player.faith;
+    count ++;
 }
 
 //Arcane
@@ -159,16 +175,26 @@ arcValue.innerHTML = player.arcane;
 function decreasingArcStat() {
     player.arcane -= 1;
     arcValue.innerHTML = player.arcane;
+    count --;
 } 
 
 function increasingArcStat() {
     player.arcane += 1;
     arcValue.innerHTML = player.arcane;
+    count ++;
 }
 
 }
-        count --;
 
 }
+
+function submitfunc() {
+    console.log("SubmitFunc")
+}
+
+let submitBtn = document.getElementById("submit")
+submitBtn.addEventListener("click", event => {
+    submitfunc()
+})
 
 }
